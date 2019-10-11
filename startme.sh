@@ -10,7 +10,7 @@ then
 	darkhttpd /var/www/html --port 80 --daemon
 	if [ -z "${SKIP_REFRESH}" ]
 	then
-		wget -qO- https://codeload.github.com/dokku/simp_le/tar.gz/master | tar xz -C /
+		wget -qO- https://codeload.github.com/zenhack/simp_le/tar.gz/master | tar xz -C /
 	fi
 	/simp_le-master/simp_le.py --default_root /var/www/html "$@"
 else
