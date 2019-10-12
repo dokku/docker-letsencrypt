@@ -13,6 +13,7 @@ then
         cd /simp_le-master
         git pull
     fi
+    cd /certs
     /simp_le-master/simp_le.py --default_root /var/www/html "$@"
 else
     "$@"
