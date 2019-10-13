@@ -14,8 +14,8 @@ RUN apk --update add python \
         libffi-dev \
         git \
         darkhttpd \
-    && git clone https://github.com/zenhack/simp_le.git /simp_le-master \
-    && pip install -e /simp_le-master/ \
+    && git clone --single-branch --branch 0.15.0 https://github.com/zenhack/simp_le.git /simp_le \
+    && pip install -e /simp_le/ \
     && mkdir /certs \
     && apk --purge del musl-dev openssl-dev libffi-dev gcc python-dev py-pip
 WORKDIR /certs

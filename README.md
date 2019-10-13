@@ -1,7 +1,7 @@
 # docker-letsencrypt
 
-This is a containerfile for the **"simp_le"** Let's encrypt implementation by kuba (https://github.com/kuba/simp_le). It's running on Alpine Linux and is only around 60MB in size.
-It was inspired by `katta/sim_le` but has a couple of improvements.
+This is a containerfile for the **"simp_le"** Let's encrypt implementation by zenhack (https://github.com/zenhack/simp_le). It's running on Alpine Linux and is only around 60MB in size.
+It was inspired by `kuba/simp_le` and `katta/sim_le` but has a couple of improvements.
 
 Certs are saved in `/certs` so you should mount a persistent volume there.
 
@@ -10,17 +10,9 @@ Certs are saved in `/certs` so you should mount a persistent volume there.
 If you only want to get some certificates, simply run the container like this:
 
 	docker run -ti -p 80:80 -v /etc/nginx/certs:/certs \
-	dokku/letsencrypt-simp_le -f account_key.json  \
+	dokku/letsencrypt-simp_le -f account_key.json -f account_reg.json  \
 	-f chain.pem -f cert.pem -f key.pem --email a@example.org \
     -d adminswerk.de -d test.adminswerk.de
-
-#### Repo Refresh
-
-**simp_le** is refreshed from the repos master branch at container start. This normally takes not more than one second and ensures it's always up to date. If you want to disable this functionality, start the container with the environment variable `SKIP_REFRESH` set. It doesn't matter which value it contains as long as it's not null.
-
-	docker run -ti -p 80:80 -v /etc/nginx/certs:/certs -e "SKIP_REFRESH=1" \
-		dokku/letsencrypt-simp_le -f account_key.json  -f chain.pem \
-		-f cert.pem -f key.pem --email a@example.org -d adminswerk.de
 
 #### Entrypoint Override
 
