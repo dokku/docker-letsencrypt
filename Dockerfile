@@ -1,5 +1,6 @@
-FROM alpine:latest
-MAINTAINER m3adow
+FROM alpine:3.10.0
+
+MAINTAINER Jose Diaz-Gonzalez <dokku@josediazgonzalez.com>
 
 # Long command to keep the FS deltas small
 RUN apk --update add python \

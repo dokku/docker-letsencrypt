@@ -1,4 +1,4 @@
-### Alpine Linux simp_le Docker container
+# docker-letsencrypt
 
 This is a containerfile for the **"simp_le"** Let's encrypt implementation by kuba (https://github.com/kuba/simp_le). It's running on Alpine Linux and is only around 60MB in size.
 It was inspired by `katta/sim_le` but has a couple of improvements.
