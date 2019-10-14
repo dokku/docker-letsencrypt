@@ -10,7 +10,7 @@ Certs are saved in `/certs` so you should mount a persistent volume there.
 If you only want to get some certificates, simply run the container like this:
 
 	docker run -ti -p 80:80 -v /etc/nginx/certs:/certs \
-	dokku/letsencrypt-simp_le -f account_key.json -f account_reg.json  \
+	dokku/letsencrypt -f account_key.json -f account_reg.json  \
 	-f chain.pem -f cert.pem -f key.pem --email a@example.org \
     -d adminswerk.de -d test.adminswerk.de
 
@@ -19,4 +19,4 @@ If you only want to get some certificates, simply run the container like this:
 By default the container starts with an entrypoint-script which passes all arguments you start the container with to `simp_le.py`. If you want to start another application, e.g. for debugging or to build something ontop the container, you have to set the environment variable `OVERRIDE`. Identical to `SKIP_REFRESH`, it only needs to be not null, the value doesn't matter. `OVERRIDE` implies `SKIP_REFRESH` (but not the other way around), so no need to define both envs.
 
 	docker run -ti -p 80:80 -v /etc/nginx/certs:/certs -e "OVERRIDE=1" \
-		dokku/letsencrypt-simp_le sh
+		dokku/letsencrypt sh
