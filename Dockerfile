@@ -18,6 +18,10 @@ RUN apk --update add python \
     && pip install -e /simp_le/ \
     && mkdir /certs \
     && apk --purge del musl-dev openssl-dev libffi-dev gcc python-dev py-pip
+    && wget https://dl.eff.org/certbot-auto
+    && sudo mv certbot-auto /usr/local/bin/certbot-auto
+    && sudo chown root /usr/local/bin/certbot-auto
+    && sudo chmod 0755 /usr/local/bin/certbot-auto
 WORKDIR /certs
 COPY ["./startme.sh", "/usr/local/bin/"]
 ENTRYPOINT ["/usr/local/bin/startme.sh"]
