@@ -18,7 +18,7 @@ RUN apk --no-cache add python3 \
         && pip --no-cache-dir install -e /simp_le/ \
         && mkdir /certs \
         && apk --purge del musl-dev openssl-dev libffi-dev gcc python3-dev py3-pip \
-        && wget https://dl.eff.org/certbot-auto \
+        && wget --progress=dot:giga https://dl.eff.org/certbot-auto \
         && mv certbot-auto /usr/local/bin/certbot-auto \
         && chown root /usr/local/bin/certbot-auto \
         && chmod 0755 /usr/local/bin/certbot-auto
