@@ -1,4 +1,4 @@
-FROM alpine:3.16.1
+FROM alpine:3.16.3
 
 
 # hadolint ignore=DL3018
