@@ -1,8 +1,8 @@
 # docker-letsencrypt
 
-[![dokku/letsencrypt](http://dockeri.co/image/dokku/letsencrypt)](https://registry.hub.docker.com/r/dokku/letsencrypt)
+[![dokku/letsencrypt](http://dockeri.co/image/dokku/letsencrypt)](https://hub.docker.com/r/dokku/letsencrypt)
 
-This is a containerfile for the **"simp_le"** Let's encrypt implementation by zenhack ([simp_le](https://github.com/zenhack/simp_le)). It's running on Alpine Linux and is only around 60MB in size.
+This is a containerfile for the **"simp_le"** Let's encrypt implementation by zenhack ([simp_le](https://github.com/zenhack/simp_le)). It's running on Alpine Linux and is only around 30MB in size.
 It was inspired by `kuba/simp_le` and `katta/sim_le` but has a couple of improvements.
 
 Certs are saved in `/certs` so you should mount a persistent volume there.
